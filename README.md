@@ -3,7 +3,7 @@
 > Advanced SQL Injection Scanner using Python & SQLMap — with interactive DB/Table/Column selection, clean reports, and CLI automation.
 
 ![Python](https://img.shields.io/badge/Python-3.6+-blue?logo=python)
-![License](https://img.shields.io/github/license/yourusername/sqli-scanner)
+![License](https://img.shields.io/github/license/subham-29/sqlmap-adv)
 ![Made with ❤️](https://img.shields.io/badge/Made%20by-Subham%20Panigrahi-green)
 
 ---
@@ -31,7 +31,7 @@ pip install -r requirements.txt
 ### ✅ Windows
 ```bash
 # Ensure Python is added to PATH
-python -m pip install --upgrade pip
+python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
@@ -47,16 +47,16 @@ pip3 install -r requirements.txt
 ### Optional (pip install as tool)
 ```bash
 git clone https://github.com/subham-29/sqlmap-adv.git
-cd sqli-scanner
-python setup.py install
+cd sqlmap-adv
+python3 setup.py install
+python3 sqli_scanner.py -h
 ```
-
 ---
 
 ## 🚀 Usage
 
 ```bash
-python sqli_scanner.py --url "http://testphp.vulnweb.com/listproducts.php?cat=1"
+python3 sqli_scanner.py --url "http://testphp.vulnweb.com/listproducts.php?cat=1"
 ```
 
 ### 🔧 Arguments:
