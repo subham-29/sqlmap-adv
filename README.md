@@ -1,109 +1,156 @@
+
 # 🔐 SQLi Scanner
 
-> Advanced SQL Injection Scanner using Python & SQLMap — with interactive DB/Table/Column selection, clean reports, and CLI automation.
+> A beginner-friendly yet powerful SQL Injection Scanner made using Python & SQLMap — built by an 18-year-old with a passion for cybersecurity.
 
 ![Python](https://img.shields.io/badge/Python-3.6+-blue?logo=python)
 ![License](https://img.shields.io/github/license/subham-29/sqlmap-adv)
-![Made with ❤️](https://img.shields.io/badge/Made%20by-Subham%20Panigrahi-green)
+![Built by a Beginner](https://img.shields.io/badge/Built%20by-18%20Y.O.%20Beginner-green)
 
 ---
 
-## ⚡ Features
+## ⚡ What It Does
 
-- 🔍 SQLMap-powered SQL injection scanner (quick & deep modes)
-- 🧠 Interactive DB ➝ Table ➝ Column selection with smart prompts
-- 📊 HTML/CSV reports + colored console output
-- 🌐 Supports crawling, form scanning, proxies, multithreading
-- 🧪 Exports credentials, email dumps, full tables, or selected columns
-- 🧾 Saves logs, generates clean outputs
+This is a tool I built to help test websites for **SQL Injection vulnerabilities** using SQLMap in the backend. It supports:
+
+- 🔍 Quick + Deep scan modes using SQLMap
+- 🧠 Interactive exploration of databases (choose DB ➝ Table ➝ Column)
+- 📊 Clean HTML/CSV reports + colorful terminal output
+- 🌐 Features like crawling, form scanning, proxy use, and multithreading
+- 🧪 Dumps credentials or selected data from vulnerable sites
+- 🧾 Saves logs and generates clean, readable output
 
 ---
 
-## 📦 Installation
+## 📦 How to Install
 
-### ✅ Linux / Kali / Ubuntu
+> Works on **Linux**, **Windows**, and **macOS**!
+
+### 🐧 Linux / Kali / Ubuntu
 ```bash
 sudo apt install python3 python3-pip
 sudo apt install sqlmap  # or git clone https://github.com/sqlmapproject/sqlmap
 pip install -r requirements.txt
 ```
 
-### ✅ Windows
+### 🪟 Windows
 ```bash
-# Ensure Python is added to PATH
+# Make sure Python is installed and added to PATH
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-> Make sure `sqlmap.py` is available in PATH or in the same directory.
-
-### ✅ macOS
+### 🍎 macOS
 ```bash
 brew install python3
 brew install sqlmap
 pip3 install -r requirements.txt
 ```
 
-### Optional (pip install as tool)
+---
+
+### Optional: Install as a Tool
 ```bash
 git clone https://github.com/subham-29/sqlmap-adv.git
 cd sqlmap-adv
 sudo python3 setup.py install
 python3 sqli_scanner.py -h
 ```
+
 ---
 
-## 🚀 Usage
+## 🚀 How to Use
 
+### Basic Scan
 ```bash
-python3 sqli_scanner.py --url "http://testphp.vulnweb.com/listproducts.php?cat=1"
+python sqli_scanner.py --url "https://example.com/page.php?id=1"
 ```
 
-### 🔧 Arguments:
-| Flag | Description |
-|------|-------------|
-| `--url` | Target URL to scan |
-| `--quick` | Run fast payload-based test |
-| `--deep` | Full SQLMap scan with dump |
-| `--interactive` | Activate menu for selecting DB ➝ Table ➝ Column |
-| `--crawl=N` | Crawl up to N links |       
-| `--threads=N` | Set thread count (default: 5) |
-| `--proxy http://127.0.0.1:8080` | Use proxy (e.g., with Burp Suite) |
-| `--timeout=10` | Set custom request timeout |
-| `--output output_folder` | Folder to save logs and dumps |
-
-### Example:
+### With More Options
 ```bash
-python sqli_scanner.py --url "http://target.com/?id=1" --interactive --deep --proxy http://127.0.0.1:8080
+python sqli_scanner.py --url "https://example.com/page.php?id=1" \
+                      --threads 8 \
+                      --crawl-depth 5 \
+                      --timeout 15 \
+                      --verbosity 2 \
+                      --output-dir "scan_results" \
+                      --proxy "http://127.0.0.1:8080" \
+                      --interactive
 ```
 
+### Command Line Options
+
+| Option | Description |
+|--------|-------------|
+| `--url` | Target website URL |
+| `--threads` | How many scans at once (default: 5) |
+| `--crawl-depth` | How deep to crawl (default: 3) |
+| `--timeout` | Timeout for requests (default: 10s) |
+| `--verbosity` | Level of detail (0-3) |
+| `--output-dir` | Folder to save scan results |
+| `--proxy` | Use a proxy (like Burp Suite) |
+| `--interactive` | Browse database interactively |
+| `--quick-creds` | Try to quickly dump credentials |
+
 ---
 
-## 📁 Outputs
+## 🔄 How It Works
 
-- `vulnerable_<timestamp>.txt`
-- `output_clean.txt`, `output.csv`
-- `report_<target>.html`
-- `target.json` *(raw dump)*
+1. **Discovery**: Finds URLs with possible injection points
+2. **Quick Scan**: Tries basic SQLi payloads
+3. **Deep Scan**: Uses SQLMap to test more thoroughly
+4. **Explore**: Lets you browse and extract from the database
+5. **Report**: Generates neat HTML + CSV reports
 
 ---
 
-## 👨‍💻 Author
+## 🧠 Interactive DB Explorer
 
-Made with 💚 by **Subham Panigrahi**  
-🔗 [GitHub](https://github.com/subham-29) — [LinkedIn](https://www.linkedin.com/in/subham-panigrahi-495804322/)  
-📬 Contributions and PRs welcome!
+If a site is vulnerable, you can:
+
+- Explore databases, tables, columns
+- Extract emails, credentials, or anything else
+- Save what you find in a file (CSV format)
+
+---
+
+## 📝 Sample Report
+
+Each scan gives you:
+
+- ✅ Vulnerability summary
+- 🧨 List of affected URLs + risk levels
+- 🔐 Sensitive data (if found)
+- 🛡️ Fix suggestions
+- 🧾 Technical logs (for learning)
+
+---
+
+## ⚠️ Legal Stuff
+
+> This tool is for **learning and ethical testing** only.
+
+Don’t scan any website unless **you own it** or have **permission** to test it. Hacking into websites without permission is **illegal** and can get you in serious trouble.
+
+---
+
+## 👦 About Me
+
+Hi! I’m **Subham Panigrahi**, an 18-year-old just getting started with Python, ethical hacking, and cybersecurity. I built this project to learn how tools like SQLMap work and to share something helpful with other beginners.
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/subham-panigrahi-495804322/)
+- 🛠️ Always learning | Beginner CTF player | Python + SQL enthusiast
 
 ---
 
 ## 📜 License
 
-**MIT License** — free to use, modify, and distribute. See `LICENSE` file for details.
-
-> This tool is intended for **ethical and educational purposes only.** Do not use on sites without permission.
+This project is open-source under the MIT License — check the [LICENSE](LICENSE) file.
 
 ---
 
-## ⭐ Star the Repo if You Like It!
+## 🙏 Thanks To
 
-Want new features like webhook alerts, plugin support, or Nuclei integration? Open an issue or drop a PR!
+- The amazing **SQLMap** devs for making such a great tool
+- Python open-source community
+- Everyone sharing knowledge online that helped me learn!
