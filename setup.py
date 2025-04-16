@@ -5,8 +5,8 @@ setup(
     version='2.0.0',
     description='Advanced SQL Injection Scanner powered by SQLMap with interactive DB/Table/Column dumping and reporting',
     author='Subham Panigrahi',
-    author_email='subham@example.com',  # Replace with your real or GitHub email
-    url='https://github.com/yourusername/sqli-scanner',  # Replace after publishing
+    author_email='subhampanigrahi.dev@gmail.com',  # Replace with your real or GitHub email
+    url='https://github.com/subham-29/sqlmap-adv',  # Replace after publishing
     packages=find_packages(),
     py_modules=['sqli_scanner'],
     install_requires=[
