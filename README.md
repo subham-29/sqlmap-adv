@@ -48,7 +48,7 @@ pip3 install -r requirements.txt
 ```bash
 git clone https://github.com/subham-29/sqlmap-adv.git
 cd sqlmap-adv
-python3 setup.py install
+sudo python3 setup.py install
 python3 sqli_scanner.py -h
 ```
 ---
