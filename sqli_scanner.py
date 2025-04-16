@@ -158,8 +158,7 @@ class SQLInjectionScanner:
                 while process.poll() is None:
                     time.sleep(0.5)
                     pbar.update(1)
-                    if pbar.n >= 99:
-                        pbar.n = 80  # Reset progress if taking too long
+                    # Removed artificial reset to 80 to prevent infinite loop at 99%
                 
                 pbar.n = 100
                 pbar.refresh()
@@ -965,6 +964,17 @@ class SQLInjectionScanner:
         with open(report_file, "w") as f:
             f.write(report_content)
         
+        
+        # Optional: generate summary CSV of vulnerable URLs
+        import csv
+        csv_summary = f"{self.output_dir}/vulnerable_urls_summary.csv"
+        with open(csv_summary, "w", newline="") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(["Vulnerable URL", "Detected Method"])
+            for url in self.vulnerable_urls:
+                writer.writerow([url, "Quick Check or SQLMap"])
+        self.log(1, f"Summary CSV generated: {csv_summary}")
+
         self.log(1, f"Report generated successfully: {report_file}")
         return report_file
 
