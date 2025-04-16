@@ -46,7 +46,7 @@ pip3 install -r requirements.txt
 
 ### Optional (pip install as tool)
 ```bash
-git clone https://github.com/yourusername/sqli-scanner.git
+git clone https://github.com/subham-29/sqlmap-adv.git
 cd sqli-scanner
 python setup.py install
 ```
